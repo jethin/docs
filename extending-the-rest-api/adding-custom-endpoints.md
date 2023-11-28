@@ -547,4 +547,9 @@ class Slug_Custom_Route extends WP_REST_Controller {
     );
   }
 }
+function register_custom_rest() {
+    $controller = new Slug_Custom_Route();
+    $controller->register_routes();
+}
+add_action( 'rest_api_init', 'register_custom_rest' );
 ```
